@@ -24,7 +24,7 @@ public class Borrador {
           this.material = material;
         }
      */
-    this.material = material;
+    this.material = requireNonNull(material, "El material es obligatorio.");
   }
 
   public void especificarColorPri(Color color) {
@@ -32,7 +32,7 @@ public class Borrador {
           this.colorPri = colorPri;
         }
      */
-    this.colorPri = color;
+    this.colorPri = requireNonNull(color, "El color primario es obligatorio.");
   }
 
   public void especificarColorSec(Color color) {
@@ -44,10 +44,10 @@ public class Borrador {
   }
 
   public void especificarTrama(Trama trama) {
-    /* if(validarTrama(trama)) {
-          this.trama = trama;
-        }
-     */
-    this.trama = trama;
+    if (trama == null) {
+      this.trama = Trama.LISA;
+    } else {
+      this.trama = trama;
+    }
   }
 }

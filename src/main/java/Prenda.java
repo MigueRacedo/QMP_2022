@@ -12,7 +12,11 @@ public class Prenda {
     this.tipoPrenda = requireNonNull(tipoPrenda, "El tipo de prenda es obligatorio.");
     this.material = requireNonNull(material, "El material es obligatorio.");
     this.colorPri = requireNonNull(colorPri, "El color primario es obligatorio.");
-    this.trama = requireNonNull(trama, "La trama es obligatoria.");
+    if (trama == null) {
+      this.trama = Trama.LISA;
+    } else {
+      this.trama = trama;
+    }
   }
 
   // constructor con Color secundario
@@ -21,7 +25,11 @@ public class Prenda {
     this.material = requireNonNull(material, "El material es obligatorio.");
     this.colorPri = requireNonNull(colorPri, "El color primario es obligatorio.");
     this.colorSec = colorSec;
-    this.trama = requireNonNull(trama, "La trama es obligatoria.");
+    if (trama == null) {
+      this.trama = Trama.LISA;
+     } else {
+      this.trama = trama;
+    }
   }
 
   //La categoria de una prenda, se encuentra en su tipo de prenda.
