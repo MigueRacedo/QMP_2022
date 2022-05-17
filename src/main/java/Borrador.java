@@ -50,4 +50,8 @@ public class Borrador {
       this.trama = trama;
     }
   }
+
+  public Prenda crearPrenda() {
+    return new Prenda(tipoPrenda, material, colorPri, colorSec, trama);
+  }
 }
